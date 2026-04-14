@@ -1,14 +1,18 @@
 import pandas as pd
+import json
 
 # Load JSON file
-df = pd.read_json("trending_posts.json")
+with open("data/trending.json", "r") as f:
+        data = json.load(f)
+
+df = pd.DataFrame(data)
 
 # Preview data
 print("Before Cleaning:")
 print(df.head())
 
 # -------------------------
-# 🧹 Data Cleaning Steps
+#  Data Cleaning Steps
 # -------------------------
 
 # 1. Remove duplicate posts (based on title)
