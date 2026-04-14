@@ -1,5 +1,8 @@
 import requests
+import time
 import json
+import os
+from datetime import datetime
 
 # Reddit API endpoint for trending posts
 url = "https://www.reddit.com/r/popular.json"
@@ -27,11 +30,15 @@ if response.status_code == 200:
             "comments": post_data["num_comments"]
         })
 
+    os.makedirs("data", exist_ok=True)
+
+    # File name with date
+    filename = f"data/trends_{datetime.now().strftime('%Y%m%d')}.json"
     # Save to JSON file
-    with open("trending_posts.json", "w", encoding="utf-8") as f:
+    with open(filename, "w", encoding="utf-8") as f:
         json.dump(posts, f, indent=4)
 
-    print("Saved trending_posts.json")
+    print(f"Saved {filename}")
 
 else:
     print("Error:", response.status_code)
