@@ -44,6 +44,6 @@ print(df.head())
 # -------------------------
 # 💾 Save as CSV
 # -------------------------
-df.to_csv("cleaned_posts.csv", index=False)
+df.to_csv("data/trends_clean.csv", index=False)
 
 print("\nCleaned data saved as cleaned_posts.csv")

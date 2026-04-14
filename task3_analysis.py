@@ -70,6 +70,6 @@ print(df.nlargest(5, "engagement")[["title", "engagement"]])
 # -------------------------
 # 💾 Save analyzed data
 # -------------------------
-df.to_csv("analyzed_posts.csv", index=False)
+df.to_csv("data/trends_analysed.csv", index=False)
 
 print("\n Analysis complete. Saved as analyzed_posts.csv")

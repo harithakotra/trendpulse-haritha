@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load data
-df = pd.read_csv("analyzed_posts.csv")
+df = pd.read_csv("data/trends_analysed.csv")
 
 # -------------------------
 #  1. Top Subreddits (Bar Chart)
