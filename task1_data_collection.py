@@ -33,7 +33,7 @@ if response.status_code == 200:
     os.makedirs("data", exist_ok=True)
 
     # File name with date
-    filename = f"data/trends_{datetime.now().strftime('%Y%m%d')}.json"
+    filename = f"data/trending.json"
     # Save to JSON file
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(posts, f, indent=4)
